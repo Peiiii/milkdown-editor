@@ -1,0 +1,36 @@
+{
+  "name": "milkdown-editor",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:lib": "tsc && vite --config lib.vite.config.ts build",
+    "deploy:lib": "yarn build:lib && ossutil64 cp -r -u build/lib/milkdown-editor oss://apps-eiooie-com/milkdown-editor/lib -c ./.ossutilconfig.local",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@milkdown/crepe": "^7.5.5",
+    "@milkdown/kit": "^7.5.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.25.4",
+    "@eslint/js": "^9.9.0",
+    "@types/node": "^22.5.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "globals": "^15.9.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.0.1",
+    "vite": "^5.4.1",
+    "vite-plugin-css-injected-by-js": "^3.5.1"
+  }
+}
